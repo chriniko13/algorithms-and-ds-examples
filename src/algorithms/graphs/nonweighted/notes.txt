@@ -1,0 +1,11 @@
+These package contains the following demonstrations-algorithms:
+
+1) Graph with adjacency matrix [DONE]
+2) Graph with adjacency list [DONE]
+3) Depth First Search [DONE]
+4) Breadth First Search [DONE]
+5) Minimum Spanning Tree [DONE]
+6) Topological Sorting with Directed Graphs [DONE]
+7) Connectivity Table [DONE]
+8) Warshall's Algorithm [TODO]
+9) Knight's Tour [TODO]
