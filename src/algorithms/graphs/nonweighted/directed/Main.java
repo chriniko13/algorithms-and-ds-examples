@@ -21,36 +21,7 @@ public class Main {
 
         System.out.println("CONNECTIVITY TABLE DEMONSTRATION");
 
-        GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList();
-
-        //add vertices...
-        graphAdjacencyList.addVertex("A");
-        graphAdjacencyList.addVertex("B");
-        graphAdjacencyList.addVertex("C");
-        graphAdjacencyList.addVertex("D");
-        graphAdjacencyList.addVertex("E");
-
-        //add edges...
-        graphAdjacencyList.addEdge("A", "C");
-        graphAdjacencyList.addEdge("B", "A");
-        graphAdjacencyList.addEdge("B", "E");
-        graphAdjacencyList.addEdge("D", "E");
-        graphAdjacencyList.addEdge("E", "C");
-
-        //connectivity table demonstration...
-        System.out.println("connectivity table using dfs...");
-        Map<String, List<String>> connectivityTableUsingDfs = graphAdjacencyList.connectivityTable(false);
-        connectivityTableUsingDfs.forEach((k, v) -> {
-            System.out.println(k + " ---> " + v);
-        });
-
-        System.out.println();
-
-        System.out.println("connectivity table using bfs...");
-        Map<String, List<String>> connectivityTableUsingBfs = graphAdjacencyList.connectivityTable(true);
-        connectivityTableUsingBfs.forEach((k, v) -> {
-            System.out.println(k + " ---> " + v);
-        });
+        connectivityTableDemonstration();
 
     }
 
@@ -100,6 +71,39 @@ public class Main {
         //do topological sorting...
         List<Vertex> topologicalSorting = graphAdjacencyList.topologicalSorting();
         System.out.println("topologicalSorting == " + topologicalSorting);
+    }
+
+    private static void connectivityTableDemonstration() {
+        GraphAdjacencyList graphAdjacencyList = new GraphAdjacencyList();
+
+        //add vertices...
+        graphAdjacencyList.addVertex("A");
+        graphAdjacencyList.addVertex("B");
+        graphAdjacencyList.addVertex("C");
+        graphAdjacencyList.addVertex("D");
+        graphAdjacencyList.addVertex("E");
+
+        //add edges...
+        graphAdjacencyList.addEdge("A", "C");
+        graphAdjacencyList.addEdge("B", "A");
+        graphAdjacencyList.addEdge("B", "E");
+        graphAdjacencyList.addEdge("D", "E");
+        graphAdjacencyList.addEdge("E", "C");
+
+        //connectivity table demonstration...
+        System.out.println("connectivity table using dfs...");
+        Map<String, List<String>> connectivityTableUsingDfs = graphAdjacencyList.connectivityTable(false);
+        connectivityTableUsingDfs.forEach((k, v) -> {
+            System.out.println(k + " ---> " + v);
+        });
+
+        System.out.println();
+
+        System.out.println("connectivity table using bfs...");
+        Map<String, List<String>> connectivityTableUsingBfs = graphAdjacencyList.connectivityTable(true);
+        connectivityTableUsingBfs.forEach((k, v) -> {
+            System.out.println(k + " ---> " + v);
+        });
     }
 
 }
